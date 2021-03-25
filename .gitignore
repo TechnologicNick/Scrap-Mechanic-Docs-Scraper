@@ -1,0 +1,4 @@
+node_modules
+input
+output/*
+!output/api_docs.latest.json
