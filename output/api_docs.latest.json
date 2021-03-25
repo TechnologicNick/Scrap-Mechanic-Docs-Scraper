@@ -2,7 +2,7 @@
 	"author": "TechnologicNick",
 	"version": "unspecified",
 	"comment": "This json file was generated using an API docs scraper",
-	"time": 1616707473164,
+	"time": 1616708742670,
 	"urls": {
 		"discord": "https://discordapp.com/users/254340017575559178",
 		"steam": "https://steamcommunity.com/id/TechnologicNick/",
@@ -93,7 +93,11 @@
 					"sandbox": "",
 					"description": "Prints data to the [console](index.html#console). This is useful for debugging.\n\nNote\n\nIf the game is running with the `-dev` flag, any output will be added to the game logs.",
 					"params": [
-						{}
+						{
+							"name": "*args",
+							"type": "any",
+							"description": "The arguments to be printed."
+						}
 					],
 					"returns": []
 				},
@@ -945,7 +949,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {shape}",
+							"description": "The table of shapes in a body."
+						}
 					]
 				},
 				"getCreationShapes": {
@@ -960,7 +967,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {shape}",
+							"description": "The table of shapes in a creation."
+						}
 					]
 				},
 				"getCreationBodies": {
@@ -975,7 +985,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {body}",
+							"description": "The table all bodies in a creation."
+						}
 					]
 				},
 				"getCreationsFromBodies": {
@@ -986,7 +999,10 @@
 						{}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table { {body}, ... }",
+							"description": "The table array containing tables of all the bodies, grouped by creation."
+						}
 					]
 				},
 				"hasChanged": {
@@ -1018,7 +1034,10 @@
 					"description": "Returns a table with all the bodies in the world.",
 					"params": [],
 					"returns": [
-						{}
+						{
+							"type": "table {body}",
+							"description": "The table of all bodies."
+						}
 					]
 				},
 				"isDynamic": {
@@ -1561,7 +1580,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {interactable}",
+							"description": "A table of the connected parent interactables."
+						}
 					]
 				},
 				"getChildren": {
@@ -1576,7 +1598,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {interactable}",
+							"description": "A table of the connected child interactables."
+						}
 					]
 				},
 				"getJoints": {
@@ -1591,7 +1616,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {joint}",
+							"description": "A table of the connected joints."
+						}
 					]
 				},
 				"getBearings": {
@@ -1606,7 +1634,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {joint}",
+							"description": "A table of the connected bearings."
+						}
 					]
 				},
 				"getPistons": {
@@ -1621,7 +1652,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {joint}",
+							"description": "A table of the connected pistons."
+						}
 					]
 				},
 				"getPoseWeight": {
@@ -1861,8 +1895,16 @@
 							"type": "vec3",
 							"description": "The shape's local position."
 						},
-						{},
-						{},
+						{
+							"name": "z-axis",
+							"type": "vec3",
+							"description": "The shape's local z direction."
+						},
+						{
+							"name": "x-axis",
+							"type": "vec3",
+							"description": "The shape's local x direction."
+						},
 						{
 							"name": "forceCreate",
 							"type": "bool",
@@ -2182,7 +2224,10 @@
 					"description": "Returns a table of all [`players`]([[userdata.player]] \"userdata.player\") that are currently in the game.",
 					"params": [],
 					"returns": [
-						{}
+						{
+							"type": "table {player}",
+							"description": "The table of players in the game."
+						}
 					]
 				},
 				"placeLift": {
@@ -2509,7 +2554,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {uuid, int, (int)}",
+							"description": "The table."
+						}
 					]
 				},
 				"hasChanged": {
@@ -2581,7 +2629,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {bool, raycastResult}",
+							"description": "2 values: whether raycast was successful; the raycast result data."
+						}
 					]
 				},
 				"distanceRaycast": {
@@ -2601,7 +2652,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {bool, number}",
+							"description": "2 values: whether raycast was successful; the fraction (0–1) of the distance reached until collision divided by the ray's length."
+						}
 					]
 				},
 				"applyImpulse": {
@@ -2874,7 +2928,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {bool, raycastResult}",
+							"description": "2 values: whether raycast was successful; the raycast result data."
+						}
 					]
 				}
 			},
@@ -3505,7 +3562,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table { vec3, quat, vec3, table {string}, table {param} }",
+							"description": "Table containing position, rotation, scale, tags and additional data for each node."
+						}
 					]
 				},
 				"getInteractablesByName": {
@@ -3530,7 +3590,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {interactable}",
+							"description": "A table of found interactables with matching name"
+						}
 					]
 				},
 				"getInteractablesByUuid": {
@@ -3555,7 +3618,10 @@
 						}
 					],
 					"returns": [
-						{}
+						{
+							"type": "table {interactable}",
+							"description": "A table of found interactables with matching uuid"
+						}
 					]
 				}
 			},

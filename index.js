@@ -81,7 +81,7 @@ class DocParser {
 
                         // extract parameters
                         extractFields(tr).forEach((field) => {
-                            let match = field.match(/^(?<name>\w+) \((?<type>\w+)\) [-\u2012\u2013\u2014] (?<description>.*?)$/);
+                            let match = field.match(/^(?<name>.*?) \((?<type>\w+)\) [-\u2012\u2013\u2014] (?<description>.*?)$/);
                             params.push(Object.assign({}, match?.groups ?? {}));
                         });
 
@@ -89,7 +89,7 @@ class DocParser {
 
                         // extract parameters
                         extractFields(tr).forEach((field) => {
-                            let match = field.match(/^(?<type>\w+) [-\u2012\u2013\u2014] (?<description>.*?)$/);
+                            let match = field.match(/^(?<type>.*?) [-\u2012\u2013\u2014] (?<description>.*?)$/);
                             returns.push(Object.assign({}, match?.groups ?? {}));
                         });
 
